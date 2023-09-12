@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TreeView;assembly=Syncfusion.Maui.TreeView"
+             xmlns:treeView="clr-namespace:Syncfusion.TreeView.Engine;assembly=Syncfusion.Maui.TreeView"
+             xmlns:local="clr-namespace:TreeViewMaui"
+             x:Class="TreeViewMaui.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:FileManagerViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <syncfusion:SfTreeView  x:Name="treeView" FullRowSelect="True" SelectionMode="Extended" ScrollBarVisibility="Always" ExpandActionTarget="Node" ExpanderPosition="End"
+                                ChildPropertyName="SubFiles"
+                                ItemsSource="{Binding ImageNodeInfo}"
+                                AutoExpandMode="AllNodesExpanded">
+            <syncfusion:SfTreeView.Behaviors>
+                <local:Behavior/>
+            </syncfusion:SfTreeView.Behaviors>
+            <syncfusion:SfTreeView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowSpacing="0" ColumnSpacing="0" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Grid RowSpacing="0" Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding ImageIcon}" Margin="0,5,5,0"
+                     Grid.Column="0"
+                     Grid.Row="0"
+                     HeightRequest="30"
+                     WidthRequest="30"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Center" />
+                            <StackLayout Padding="5,5,0,0" Orientation="Vertical" VerticalOptions="Center" Grid.Row="0" Grid.Column="1">
+                                <Label Text="{Binding FileName}" FontAttributes="Bold" FontFamily="Roboto" FontSize="16" HeightRequest="30" VerticalOptions="Center"  TextColor="#474747"/>
+                                <Label Text="{Binding FileDescription}" FontFamily="Roboto" LineHeight="1" Opacity=" 0.74" TextColor="#474747" FontSize="14"/>
+                            </StackLayout>
+                        </Grid>
+                        <BoxView Grid.Row="1" Margin="0" HeightRequest="1" Opacity="0.24" BackgroundColor="#CECECE" />
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfTreeView.ItemTemplate>
+        </syncfusion:SfTreeView>
+    </ContentPage.Content>
+</ContentPage>
