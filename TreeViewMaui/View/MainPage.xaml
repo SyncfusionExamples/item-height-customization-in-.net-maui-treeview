@@ -11,10 +11,11 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <syncfusion:SfTreeView  x:Name="treeView"
-                                ChildPropertyName="SubFiles"
-                                ItemsSource="{Binding ImageNodeInfo}"
-                                AutoExpandMode="AllNodesExpanded">
+        <syncfusion:SfTreeView x:Name="treeView"
+                               ChildPropertyName="SubFiles"
+                               ScrollBarVisibility="Never"
+                               ItemsSource="{Binding ImageNodeInfo}"
+                               AutoExpandMode="AllNodesExpanded">
             <syncfusion:SfTreeView.Behaviors>
                 <local:Behavior/>
             </syncfusion:SfTreeView.Behaviors>
@@ -33,15 +34,9 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding ImageIcon}" Margin="0,5,5,0"
-                     Grid.Column="0"
-                     Grid.Row="0"
-                     HeightRequest="30"
-                     WidthRequest="30"
-                     HorizontalOptions="Start"
-                     VerticalOptions="Start" />
+                            <Image Source="{Binding ImageIcon}" Margin="0,5,5,0" Grid.Column="0" Grid.Row="0" HeightRequest="30" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Start" />
                             <StackLayout Padding="5,5,0,0" Orientation="Vertical" VerticalOptions="Center" Grid.Row="0" Grid.Column="1">
-                                <Label Text="{Binding FileName}" FontAttributes="Bold" FontFamily="Roboto" FontSize="16" HeightRequest="30" VerticalOptions="Center"  TextColor="#474747"/>
+                                <Label Text="{Binding FileName}" FontFamily="Roboto" FontAttributes="Bold" FontSize="16" HeightRequest="30" VerticalTextAlignment="Center" TextColor="#474747"/>
                                 <Label Text="{Binding FileDescription}" FontFamily="Roboto" LineHeight="1" Opacity=" 0.74" TextColor="#474747" FontSize="14"/>
                             </StackLayout>
                         </Grid>

@@ -24,5 +24,11 @@ namespace TreeViewMaui
             e.Height = e.GetActualNodeHeight();
             e.Handled = true;
         }
+
+        protected override void OnDetachingFrom(SfTreeView bindable)
+        {
+            sftreeView = null;
+            base.OnDetachingFrom(bindable);
+        }
     }
 }
