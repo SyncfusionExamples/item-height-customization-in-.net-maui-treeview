@@ -13,7 +13,6 @@
     <ContentPage.Content>
         <syncfusion:SfTreeView x:Name="treeView"
                                ChildPropertyName="SubFiles"
-                               ScrollBarVisibility="Never"
                                ItemsSource="{Binding ImageNodeInfo}"
                                AutoExpandMode="AllNodesExpanded">
             <syncfusion:SfTreeView.Behaviors>

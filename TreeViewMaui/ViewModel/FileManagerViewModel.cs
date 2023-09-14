@@ -42,7 +42,6 @@ namespace TreeViewMaui
         private void GenerateSource()
         {
             var nodeImageInfo = new ObservableCollection<FileManager>();
-            Assembly assembly = typeof(MainPage).GetTypeInfo().Assembly;
             var doc = new FileManager() { FileName = "Documents", ImageIcon = "folder.png" };
             var download = new FileManager() { FileName = "Downloads", ImageIcon = "folder.png" };
             var mp3 = new FileManager() { FileName = "Music", ImageIcon = "folder.png" };
@@ -112,7 +111,6 @@ namespace TreeViewMaui
                 video2
             };
 
-            Item = camera;
             nodeImageInfo.Add(doc);
             nodeImageInfo.Add(download);
             nodeImageInfo.Add(mp3);

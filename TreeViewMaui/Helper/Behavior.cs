@@ -27,6 +27,7 @@ namespace TreeViewMaui
 
         protected override void OnDetachingFrom(SfTreeView bindable)
         {
+            sftreeView.QueryNodeSize -= SftreeView_QueryNodeSize;
             sftreeView = null;
             base.OnDetachingFrom(bindable);
         }
