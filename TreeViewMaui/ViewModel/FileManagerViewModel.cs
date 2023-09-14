@@ -15,7 +15,6 @@ namespace TreeViewMaui
 
         private ObservableCollection<FileManager> imageNodeInfo;
 
-        public object Item { get; set; }
         #endregion
 
         #region Constructor
